@@ -1,0 +1,10 @@
+﻿<Properties StartupConfiguration="{87751D2F-D031-4613-8849-8836456815F3}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.iOSDialog PreferredExecutionTarget="Android.10.1&quot; Marshmallow (6.0.0) XHDPI Tablet" />
+</Properties>
