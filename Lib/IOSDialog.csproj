@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="packages\NuGet.Build.Packaging.0.1.157-dev\build\NuGet.Build.Packaging.props" Condition="Exists('packages\NuGet.Build.Packaging.0.1.157-dev\build\NuGet.Build.Packaging.props')" />
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{87751D2F-D031-4613-8849-8836456815F3}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -13,23 +12,24 @@
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
+    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <PackageId>Karamunting.Android.MagicDog707.iOSDialog</PackageId>
-    <PackageVersion>1.0.2</PackageVersion>
+    <PackageVersion>1.0.3</PackageVersion>
     <Authors>Acciaro Gennaro Daniele, Rofiq Setiawan</Authors>
     <Copyright>Acciaro Gennaro Daniele</Copyright>
     <PackageIconUrl>https://camo.githubusercontent.com/44dc84d8a9355eded17288e8854a956b6821df60/687474703a2f2f692e696d6775722e636f6d2f453242594d66472e6a7067</PackageIconUrl>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <PackageLicenseUrl>https://github.com/MagicDog707/iOSDialog</PackageLicenseUrl>
+    <PackageLicenseUrl>https://github.com/rofiqsetiawan/iOSDialog</PackageLicenseUrl>
     <Owners>Rofiq Setiawan</Owners>
-    <PackageProjectUrl>https://github.com/MagicDog707/iOSDialog</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/rofiqsetiawan/iOSDialog</PackageProjectUrl>
     <PackageTags>ios apple iosdialog ios-dialog dialog alert alert-dialog android-dialog android-dialog-view android android-library droid monodroid xamarin xamarin-android xamarin.android</PackageTags>
     <Title>iOSDialog for Android</Title>
     <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
-    <Summary>iOS UIAlertView for Android.</Summary>
-    <Description>iOS UIAlertView for Android.</Description>
+    <Summary>iOS UIAlertView for Xamarin.Android. Source and demo available on https://github.com/rofiqsetiawan/iOSDialog</Summary>
+    <Description>iOS UIAlertView for Xamarin.Android. Source and demo available on https://github.com/rofiqsetiawan/iOSDialog</Description>
     <PackOnBuild>true</PackOnBuild>
     <ReleaseVersion>1.0.2</ReleaseVersion>
+    <PackageReleaseNotes>This is breaking-change release. Please see https://github.com/rofiqsetiawan/iOSDialog for documentation</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -58,17 +58,23 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IiOSDialogClickListener.cs" />
+    <Compile Include="IOSDialogBuilder.cs" />
+    <Compile Include="IOSDialogClickListener.cs" />
+    <Compile Include="MyViewOnClickListener.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="iOSDialog.cs" />
+    <Compile Include="IOSDialog.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\background.xml" />
-    <AndroidResource Include="Resources\layout\alerts_two_buttons.xml" />
+    <AndroidResource Include="Resources\layout\alerts_two_buttons.axml" />
     <AndroidResource Include="Resources\values\strings.xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <PackageReference Include="NuGet.Build.Packaging">
+      <Version>0.2.2</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
@@ -80,5 +86,4 @@
       </Properties>
     </MonoDevelop>
   </ProjectExtensions>
-  <Import Project="packages\NuGet.Build.Packaging.0.1.157-dev\build\NuGet.Build.Packaging.targets" Condition="Exists('packages\NuGet.Build.Packaging.0.1.157-dev\build\NuGet.Build.Packaging.targets')" />
 </Project>
